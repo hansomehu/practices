@@ -1,0 +1,14 @@
+
+f
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ŠÈÝà
+f
+java:S1149<"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ŠÈÝà
+S	java:S106"9Replace this use of System.out or System.err by a logger.(­†ÑÂùÿÿÿÿ
+N	java:S106$"9Replace this use of System.out or System.err by a logger.(÷ŸÐÊ
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(­†ÑÂùÿÿÿÿ
+Z
+java:S1854J"8Remove this useless assignment to local variable "node".(ë¢æûÿÿÿÿ8Ü§Ö¬¶0
+A
+java:S1168?"+Return an empty collection instead of null.(¥¹ï
+S	java:S106W"9Replace this use of System.out or System.err by a logger.(­†ÑÂùÿÿÿÿ
+N	java:S106e"9Replace this use of System.out or System.err by a logger.(¸õüÉ

@@ -1,0 +1,9 @@
+
+~
+java:S1319"cThe type of "res" should be an interface such as "List" rather than the implementation "ArrayList".( ‘öıÿÿÿÿ
+~
+java:S1319"cThe type of "num" should be an interface such as "List" rather than the implementation "ArrayList".( ‘öıÿÿÿÿ
+†
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ğ†Ü¯
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8–­µ³0

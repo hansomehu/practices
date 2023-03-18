@@ -1,0 +1,6 @@
+
+W
+java:S2184"BCast one of the operands of this division operation to a "double".(¨›ό/
+N	java:S106"9Replace this use of System.out or System.err by a logger.(®υγ‚
+;
+java:S2185"&Remove this silly call to "Math.floor"(¨›ό/
