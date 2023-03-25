@@ -3,6 +3,7 @@ package lang.proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.function.Consumer;
 
 public class DynamicProxyCGLib {
 
@@ -24,14 +25,28 @@ public class DynamicProxyCGLib {
     Cglib原理是针对目标类生成一个子类，覆盖其中的所有方法，所以目标类和方法不能声明为final类型。
      */
 
-    public interface Biz{
+    public static void main(String[] args) {
+        RealImpl real = new RealImpl();
+        InvocationHandlerImpl handler = new InvocationHandlerImpl(real);
+
+        ClassLoader classLoader = real.getClass().getClassLoader();
+        Class<?>[] interfaces = real.getClass().getInterfaces();
+
+        Biz proxyO = (Biz) Proxy.newProxyInstance(classLoader, interfaces, handler);
+
+        // invoke中的method参数来源
+        proxyO.SayHello("hanson");
+
+    }
+
+    interface Biz {
 
         public String SayHello(String name);
 
         public String SayGoodBye();
     }
 
-    public class RealImpl implements Biz{
+    static class RealImpl implements Biz {
 
         @Override
         public String SayHello(String name) {
@@ -44,30 +59,26 @@ public class DynamicProxyCGLib {
         }
     }
 
-    public class InvocationHandlerImpl implements InvocationHandler{
+    static class InvocationHandlerImpl implements InvocationHandler {
         private Object target;
 
+        // 传入被代理的对象
         public InvocationHandlerImpl(Object target) {
             this.target = target;
         }
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
+            // before original method
+
+            // call original method
+            method.invoke(target, args);
+
+            // after original method
+
             return null;
         }
-    }
-
-    public void main(String[] args) {
-        RealImpl real = new RealImpl();
-        InvocationHandlerImpl handler = new InvocationHandlerImpl(real);
-
-        ClassLoader classLoader = real.getClass().getClassLoader();
-        Class<?>[] interfaces = real.getClass().getInterfaces();
-
-        Object proxyO = (RealImpl) Proxy.newProxyInstance(classLoader, interfaces, handler);
-
-
-
     }
 
 }
