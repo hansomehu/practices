@@ -60,7 +60,7 @@ public class OnceHappenedInInterview {
 
 
     /*
-
+    最长公共前缀
      */
     private String longestCommonPrefix(String[] strs){
         int len = strs.length;
